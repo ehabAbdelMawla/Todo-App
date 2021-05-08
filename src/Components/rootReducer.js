@@ -12,58 +12,60 @@ let initState = {
 
 
 const rootReducer = (state = initState, action) => {
-    if (action.type === 'SET_USER') {
+    const { type } = action;
+    if (type === 'SET_USER') {
         return {
             ...state,
             currentUser: action.Cu_User,
             branches: action.branches ? action.branches : state.branches,
         }
-    } else if (action.type === 'FETCH_Branches') {
-
+    } else if (type === 'FETCH_Branches') {
         return {
             ...state,
             branches: action.data
         }
-    } else if (action.type === "ADD_NEW_BRANCH") {
+    } else if (type === "ADD_NEW_BRANCH") {
+        const {data, data: { id } } = action;
         const newBranches = {...state.branches };
-        newBranches[action.data.id] = action.data;
+        newBranches[id] = data;
         return {
             ...state,
             branches: newBranches
         }
-    } else if (action.type === "REMOVE_BRANCH") {
+    } else if (type === "REMOVE_BRANCH") {
         const newBranches = {...state.branches };
         delete newBranches[action.id];
         return {
             ...state,
             branches: newBranches
         }
-    } else if (action.type === "UPDATE_BRANCH_NAME") {
-        const newBranches = {...state.branches };
-        newBranches[action.id].branchName = action.value;
+    } else if (type === "UPDATE_BRANCH_NAME") {
+        const newBranches = { ...state.branches };
+        const { id, value } = action;
+        newBranches[id].branchName = value;
         return {
             ...state,
             branches: newBranches
         }
-    } else if (action.type === "ADD_NEW_ITEM") {
+    } else if (type === "ADD_NEW_ITEM") {
         const targetBranch = state.branches[action.branchId]
-        const { id } = targetBranch;
+        const { id,doneNumber,openNumber } = targetBranch;
         if (!targetBranch.todoList || targetBranch.todoList === true) {
             targetBranch.todoList = {}
         }
         targetBranch.todoList[action.dataObj.id] = action.dataObj
         targetBranch.openNumber += 1
-        targetBranch.complementRate = ((targetBranch.doneNumber) / (targetBranch.openNumber + targetBranch.doneNumber)) * 100
+        targetBranch.complementRate = ((doneNumber) / (openNumber + doneNumber)) * 100
         const newBranches = {...state.branches }
         newBranches[id] = targetBranch
         return {
             ...state,
             branches: newBranches
         }
-    } else if (action.type === "CHANGE_STATUS") {
+    } else if (type === "CHANGE_STATUS") {
         const targetBranch = state.branches[action.branchId]
         const targetTask = targetBranch.todoList[action.taskId]
-        const { id } = targetBranch;
+        const { id ,doneNumber,openNumber} = targetBranch;
         targetTask.status = action.newStatus
         if (action.newStatus === "Done") {
             targetBranch.doneNumber += 1
@@ -73,14 +75,14 @@ const rootReducer = (state = initState, action) => {
             targetBranch.openNumber += 1
         }
 
-        targetBranch.complementRate = ((targetBranch.doneNumber) / (targetBranch.openNumber + targetBranch.doneNumber)) * 100
+        targetBranch.complementRate = ((doneNumber) / (openNumber + doneNumber)) * 100
         const newBranches = {...state.branches }
         newBranches[id] = targetBranch
         return {
             ...state,
             branches: newBranches
         }
-    } else if (action.type === "EDIT_TASK") {
+    } else if (type === "EDIT_TASK") {
         const targetBranch = state.branches[action.branchId]
         const targetTask = targetBranch.todoList[action.taskId]
         const { id } = targetBranch;
@@ -93,7 +95,7 @@ const rootReducer = (state = initState, action) => {
             ...state,
             branches: newBranches
         }
-    } else if (action.type === "DELETE_TASK") {
+    } else if (type === "DELETE_TASK") {
         const targetBranch = state.branches[action.branchId]
         const { id } = targetBranch;
 
@@ -111,12 +113,12 @@ const rootReducer = (state = initState, action) => {
             ...state,
             branches: newBranches
         }
-    } else if (action.type === "CHANGE_BACKARROW_VISIBILTY") {
+    } else if (type === "CHANGE_BACKARROW_VISIBILTY") {
         return {
             ...state,
             backArrowVisibilty: action.val
         }
-    } else if (action.type === "setLineChartData") {
+    } else if (type === "setLineChartData") {
         return {
             ...state,
             lineChartData: action.lineChartData

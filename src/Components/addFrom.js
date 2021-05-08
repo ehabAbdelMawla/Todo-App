@@ -57,14 +57,14 @@ class AddToDO extends Component {
     }
 
     render() {
-        const { branches, branchid } = this.props
+        const {  branchid } = this.props
         const toDoListElemnts = <TasksList branchid={branchid} />
         const content = this.props.user.uid === undefined ? (
             <p>You Must Login First</p>
         ) :
             (<div>
 
-                <form onSubmit={this.handelSubmit} className="addForm wow wobble">
+                <form onSubmit={this.handelSubmit} className="addForm wow swing">
                     <input type="text" onChange={this.handelChange} value={this.state.content} required placeholder="New Task Name...." />
 
                     <select id="myList"
