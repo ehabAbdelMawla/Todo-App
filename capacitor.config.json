@@ -1,0 +1,14 @@
+{
+  "appId": "com.todoApp",
+  "appName": "ToDo",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "build",
+  "linuxAndroidStudioPath": "/home/ehab/Downloads/android-studio-ide-192.6392135-linux/android-studio/bin/studio.sh",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}
