@@ -1,20 +1,15 @@
-import React, { Component, PureComponent } from 'react'
+import React, {  PureComponent } from 'react'
 import { connect } from 'react-redux'
 import Firebase from 'firebase';
-import store from '../index'
 import { Redirect } from 'react-router-dom'
-import swal from 'sweetalert';
 import { Link } from 'react-router-dom'
 import $ from 'jquery'
-import Login from './login'
 import Circular from './circular'
 import aes256 from 'aes256'
-import App from './App'
 import BranchBox from './BranchBox';
 
 
 class Branches extends PureComponent {
-
 
     state = {
         branchName: '',
@@ -134,7 +129,6 @@ class Branches extends PureComponent {
                 )
             } else {
                 return (
-
                     <article className="BranchesPage wow fadeIn" >
                         <div className="logContainer" > <span className="logoutBtn"
                             onClick={this.logout} > < i className="fa fa-sign-out" > </i></span > </div>

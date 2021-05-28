@@ -1,24 +1,18 @@
 import React, { Component } from 'react'
 import Firebase from 'firebase';
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
-import App from './App'
-import { Redirect } from 'react-router-dom'
-import Branches from './branchesScene'
+import { Link,Redirect } from 'react-router-dom'
 import swal from 'sweetalert';
-import Login from './login'
-import Circular from './circular';
-import PreLoad from './preLoader';
+
 class SignUp extends Component {
-    flag = false;
     state = {
         email: '',
         pass: '',
         confirmPass: '',
         eyeStatusOne: false,
         eyeStatusTwo: false,
+        submitBtnDisable:false
     }
-    flag = false;
     handelEmailChange = (e) => {
         this.setState({
             email: e.target.value
@@ -37,7 +31,10 @@ class SignUp extends Component {
 
     signupMethod = (e) => {
         e.preventDefault();
-        if (this.state.email.trim() === '' || this.state.pass.trim() === '' || this.state.confirmPass.trim() === '') {
+        this.setState({
+            submitBtnDisable: true
+        }, async() => {
+             if (this.state.email.trim() === '' || this.state.pass.trim() === '' || this.state.confirmPass.trim() === '') {
             swal("Data Incomplete", {
                 icon: "error",
             })
@@ -63,14 +60,27 @@ class SignUp extends Component {
                 icon: "error",
             })
             return;
-        }
-        Firebase.auth().createUserWithEmailAndPassword(this.state.email.trim(), this.state.pass.trim()).then(() => {
-            this.props.history.push('/branches/' + this.props.user.uid)
-        }).catch(function (error) {
-            var errorCode = error.code;
-            var errorMessage = error.message;
+            }
+            try {
+                 await Firebase.auth().createUserWithEmailAndPassword(this.state.email.trim(), this.state.pass.trim());
+                  this.props.history.push('/branches/' + this.props.user.uid)
+            }
+            catch (err) {
+                   var errorCode = err.code;
+           
+            if (errorCode === "auth/email-already-in-use") {
+                    swal("Email Is Already In Use", {
+                icon: "error",
+            })
+            }
+            }
+               this.setState({
+                    submitBtnDisable: false 
+                    })
 
-        });
+       
+        })
+       
     }
     eyeAction = (num) => {
         if (num == 1) {
@@ -86,10 +96,9 @@ class SignUp extends Component {
     }
 
     render() {
-        if (this.props.user.uid) {
+        if (this.props.user && this.props.user.uid) {
             return <Redirect to={'/branches/' + this.props.user.uid} />
         }
-
         return (
             <div className="center signup wow fadeIn"><div> <h1>Sign Up</h1>
                 <form onSubmit={this.signupMethod}>
@@ -105,12 +114,11 @@ class SignUp extends Component {
                         <i className={`fa ${this.state.eyeStatusTwo ? 'fa-eye-slash' : 'fa-eye'} eyeIcon`} onClick={() => this.eyeAction(2)}></i>
                     </div>
                     <div className="buttonContainer">
-                        <button className="btn btn-primary" id='signInBtn' >Sign Up </button>
+                        <button className="btn btn-primary" id='signInBtn' disabled={this.state.submitBtnDisable }>Sign Up </button>
                     </div>
                 </form>
                 <ul>
                     <li> <Link to="/" className="link">Login...</Link></li>
-
                 </ul></div> </div>
         )
 

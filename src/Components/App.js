@@ -70,6 +70,8 @@ class AppComponent extends Component {
                   id: 1399,
                   todoList: true,
                   currentDate: today,
+                }).then(() => {
+                  getlistOf(user);
                 });
             }
           });

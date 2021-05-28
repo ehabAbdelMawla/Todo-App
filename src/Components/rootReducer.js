@@ -25,7 +25,7 @@ const rootReducer = (state = initState, action) => {
             branches: action.data
         }
     } else if (type === "ADD_NEW_BRANCH") {
-        const {data, data: { id } } = action;
+        const { data, data: { id } } = action;
         const newBranches = {...state.branches };
         newBranches[id] = data;
         return {
@@ -40,7 +40,7 @@ const rootReducer = (state = initState, action) => {
             branches: newBranches
         }
     } else if (type === "UPDATE_BRANCH_NAME") {
-        const newBranches = { ...state.branches };
+        const newBranches = {...state.branches };
         const { id, value } = action;
         newBranches[id].branchName = value;
         return {
@@ -49,7 +49,7 @@ const rootReducer = (state = initState, action) => {
         }
     } else if (type === "ADD_NEW_ITEM") {
         const targetBranch = state.branches[action.branchId]
-        const { id,doneNumber,openNumber } = targetBranch;
+        const { id, doneNumber, openNumber } = targetBranch;
         if (!targetBranch.todoList || targetBranch.todoList === true) {
             targetBranch.todoList = {}
         }
@@ -65,7 +65,7 @@ const rootReducer = (state = initState, action) => {
     } else if (type === "CHANGE_STATUS") {
         const targetBranch = state.branches[action.branchId]
         const targetTask = targetBranch.todoList[action.taskId]
-        const { id ,doneNumber,openNumber} = targetBranch;
+        const { id } = targetBranch;
         targetTask.status = action.newStatus
         if (action.newStatus === "Done") {
             targetBranch.doneNumber += 1
@@ -75,7 +75,7 @@ const rootReducer = (state = initState, action) => {
             targetBranch.openNumber += 1
         }
 
-        targetBranch.complementRate = ((doneNumber) / (openNumber + doneNumber)) * 100
+        targetBranch.complementRate = ((targetBranch.doneNumber) / (targetBranch.openNumber + targetBranch.doneNumber)) * 100
         const newBranches = {...state.branches }
         newBranches[id] = targetBranch
         return {

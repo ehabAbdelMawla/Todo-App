@@ -4,10 +4,6 @@ import Firebase from 'firebase'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import swal from 'sweetalert';
-import $ from 'jquery'
-import store from '../index.js';
-import PreLoad from './preLoader.js'
-import aes256 from 'aes256'
 
 
 class Login extends Component {
@@ -15,6 +11,7 @@ class Login extends Component {
         email: '',
         pass: '',
         eyeStatus: false,
+          submitBtnDisable:false
 
     }
     handelEmailChange = (e) => {
@@ -32,7 +29,10 @@ class Login extends Component {
 
     loginMethod = (e) => {
         e.preventDefault();
-        if (this.state.email.trim() === '' || this.state.pass.trim() === '') {
+         this.setState({
+                    submitBtnDisable: true 
+         }, async() => {
+              if (this.state.email.trim() === '' || this.state.pass.trim() === '') {
             swal("Data Incomplete", {
                 icon: "error",
             })
@@ -46,24 +46,34 @@ class Login extends Component {
                 icon: "error",
             })
             return;
-        }
-        Firebase.auth().signInWithEmailAndPassword(this.state.email.trim(), this.state.pass.trim()).then(() => {
-            // this.props.history.push('/branches/' + this.props.user.uid)
-        }
-        ).catch(function (error) {
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            if (errorCode == "auth/user-not-found") {
-                swal("You have no account ,please sign up first", {
-                    icon: "error",
-                })
-            }
-            else if (errorCode == "auth/wrong-password") {
-                swal("Incorrect password", {
-                    icon: "error",
-                })
-            }
-        });
+             }
+             try {
+                 await Firebase.auth().signInWithEmailAndPassword(this.state.email.trim(), this.state.pass.trim());
+              }
+             catch (error) {
+                 var errorCode = error.code;
+                 console.log(error.code);
+                 if (errorCode === "auth/user-not-found") {
+                     swal("You have no account ,please sign up first", {
+                         icon: "error",
+                     })
+                 }
+                 else if (errorCode === "auth/wrong-password") {
+                     swal("Incorrect password", {
+                         icon: "error",
+                     })
+                 } else if (errorCode === "auth/too-many-requests") {
+                       swal("Too Many Requests, Please Try Again Later", {
+                         icon: "error",
+                     })
+                 }
+             }
+                this.setState({
+                    submitBtnDisable: false 
+                    })
+
+         })
+       
     }
 
     eyeAction = (e) => {
@@ -93,7 +103,7 @@ class Login extends Component {
                         <i className={`fa ${this.state.eyeStatus ? 'fa-eye-slash' : 'fa-eye'} eyeIcon`} onClick={this.eyeAction}></i>
                     </div>
                     <div className="buttonContainer">
-                        <button className="btn" id='signInBtn' >Login</button>
+                        <button className="btn" id='signInBtn' disabled={this.state.submitBtnDisable }>Login</button>
                     </div>
                 </form>
                 <ul>
