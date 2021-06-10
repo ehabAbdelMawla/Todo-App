@@ -49,13 +49,15 @@ const rootReducer = (state = initState, action) => {
         }
     } else if (type === "ADD_NEW_ITEM") {
         const targetBranch = state.branches[action.branchId]
-        const { id, doneNumber, openNumber } = targetBranch;
+        const { id } = targetBranch;
         if (!targetBranch.todoList || targetBranch.todoList === true) {
             targetBranch.todoList = {}
         }
+        targetBranch.doneNumber = targetBranch.doneNumber || 0;
+        targetBranch.openNumber = targetBranch.openNumber || 0;
         targetBranch.todoList[action.dataObj.id] = action.dataObj
         targetBranch.openNumber += 1
-        targetBranch.complementRate = ((doneNumber) / (openNumber + doneNumber)) * 100
+        targetBranch.complementRate = ((targetBranch.doneNumber) / (targetBranch.openNumber + targetBranch.doneNumber)) * 100
         const newBranches = {...state.branches }
         newBranches[id] = targetBranch
         return {
