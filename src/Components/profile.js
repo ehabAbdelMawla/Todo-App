@@ -5,7 +5,8 @@ import $ from 'jquery'
 import swal from 'sweetalert'
 import Firebase from 'firebase';
 import placeholderImage from '../images/icons8-user-90.png'
-import ImageLoader from './imageLoader'
+import ImageLoader from 'img-loading'
+import Circular from './circular'
 class Profile extends Component {
 
     state = {
@@ -146,7 +147,7 @@ class Profile extends Component {
         return (
             <section className="profileSection wow fadeIn">
                 <article>
-                    <ImageLoader errorImageSrc={placeholderImage} imageSrc={this.state.img instanceof File ? URL.createObjectURL(this.state.img) : this.props.user.imageUrl} key={Math.random() * 1000} />
+                    <ImageLoader loader={Circular} errorImageSrc={placeholderImage} imageSrc={this.state.img instanceof File ? URL.createObjectURL(this.state.img) : this.props.user.imageUrl} key={Math.random() * 1000} />
                     <input type="file" onChange={this.setImage} accept="image/*" style={{ display: "none" }} />
                     <i onClick={this.selectImage} className="fa fa-picture-o"></i>
                 </article>

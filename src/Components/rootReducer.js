@@ -88,7 +88,6 @@ const rootReducer = (state = initState, action) => {
         const targetBranch = state.branches[action.branchId]
         const targetTask = targetBranch.todoList[action.taskId]
         const { id } = targetBranch;
-        console.log(targetTask)
         targetTask.content = action.newName
         targetTask.periority = action.newPeriority
         const newBranches = {...state.branches }

@@ -1,268 +1,203 @@
 // ==== Body Design =====
 $primaryColor:#5B86E5;
-
 body {
     // background-color: #222831;
     background-color: #121212 !important;
 }
 
 // ==== ==== ====  =====
-
 // ==== Header & Footer Design =====
-
 $heightOFHeaderAndFooter:23vh;
-
-
 // ==== ==== ====  =====
-
 // ==== Login & SignUp Design ====
 .Login,
 .signup {
     h1 {
         color: $primaryColor !important;
     }
-
     form {
-
         .buttonContainer {
             text-align: right !important;
-
             button {
                 background-color: $primaryColor !important;
             }
         }
     }
-
-
     ul {
         li {
             a {
                 color: $primaryColor !important;
             }
-
         }
     }
 }
 
 // ==== ==== ====  =====
-
-
 //  ==== Branch Page Design ====
 .BranchesPage {
     .logContainer {
         span {
             background-color: $primaryColor !important;
             color: white !important;
-
             &:hover {
                 background-color: white !important;
                 color: $primaryColor !important;
             }
         }
     }
-
     form {
-
-
         input {
             border-bottom: 2px solid #ddd !important;
-
             &:focus {
                 border-bottom: 2px solid #ddd !important;
             }
         }
-
         button {
             color: $primaryColor !important;
             background-color: transparent !important;
-
             &:hover {
                 color: $primaryColor !important;
                 background-color: transparent !important;
             }
         }
-
-
     }
-
     .tit {
         color: #ddd !important;
     }
-
     .branchParent {
         .branchCard {
             color: #ddd !important;
             background: #292933c7 !important;
-
             .head {
                 background: linear-gradient(270deg, #000000, #222222) !important;
-               
                 button {
                     &:first-of-type {
                         background: linear-gradient(90deg, #F7971E, #FFD200) !important;
                     }
-
                     &:nth-of-type(2) {
                         background: #e64040 !important;
                     }
                 }
             }
             &:hover {
-                  box-shadow: 9px 9px 0px 1px rgba(41, 41, 41,0.5);
+                box-shadow: 9px 9px 0px 1px rgba(41, 41, 41, 0.5);
             }
-            
         }
     }
-
 }
 
 // ==== ==== ====  =====
-
-
-
 //  ==== TODO  Design ====
 .addFormContainer {
     form {
         input {
             border-bottom: 2px solid #ddd !important;
-
             &:focus {
                 border-bottom: 2px solid #ddd !important;
             }
         }
-
         button {
             background: $primaryColor !important;
-
             &:hover {
                 background: $primaryColor !important;
             }
         }
-
     }
-
     .filters {
         button {
             background: #222 !important;
-
             &:hover {
                 background: #222 !important;
             }
-
             &.Active {
                 background: $primaryColor !important;
             }
         }
     }
-
     .tasksContainer {
         .todoItem {
             border-bottom: none !important;
             color: #ddd !important;
             // margin: 20px 0 !important;
             background: #222 !important;
-
             &.Low:after {
                 background: #9ACD32 !important;
             }
-
             &.Medium:after {
                 background: #ffc371 !important;
             }
-
             &.High:after {
                 background: #e64040 !important;
             }
-
-
             span {
                 &:hover {
                     text-decoration: line-through !important;
                 }
-
                 &.Done {
                     text-decoration: line-through !important;
                     color: lightgray !important
                 }
             }
-
             .btns {
                 button {
                     &:first-of-type {
                         background: linear-gradient(90deg, #F7971E, #FFD200) !important;
                     }
-
                     &:nth-of-type(2) {
                         background: #e64040 !important;
                     }
                 }
             }
-
             transition: all 0.5s ease-in-out !important;
-
             &:hover {
                 box-shadow: none !important;
                 border-bottom: none !important;
                 transform: scale(1.01) !important;
             }
         }
-
         p {
             color: #ddd;
         }
     }
-
 }
 
 // ==== ==== ====  =====
-
 //  TO DO Upper Part
 .cardsContainer {
     h1 {
         color: #ddd !important;
     }
-
     div.card {
         color: white !important;
-
         i {
             color: #ffc371 !important;
         }
-
         &:nth-of-type(2) {
             background-color: #9ACD32 !important;
-
             i {
                 color: white !important;
             }
         }
-
         &:nth-of-type(2):hover {
             background-color: white !important;
             color: #9ACD32 !important;
-
             i {
                 color: #9ACD32 !important;
             }
         }
-
         &:nth-of-type(3) {
             background-color: #ffc371 !important;
-
             i {
                 color: white !important;
             }
         }
-
         &:nth-of-type(3):hover {
             background-color: white !important;
             color: #ffc371 !important;
-
             i {
                 color: #ffc371 !important;
             }
         }
-
         &:nth-of-type(1) {
             background: transparent !important;
         }
@@ -274,15 +209,12 @@ $heightOFHeaderAndFooter:23vh;
 //  ==== Edit PopUp ====
 .editScene {
     background: #0f0c29 !important;
-
     form {
         margin: 30px auto !important;
     }
-
     margin: 0 !important;
     overflow: hidden !important;
     padding: 15px !important;
-
     button {
         margin: 15px 5px !important;
         color: white !important;
@@ -291,22 +223,17 @@ $heightOFHeaderAndFooter:23vh;
         border-radius: 5px !important;
         background-color: $primaryColor !important;
         border: none !important;
-
         &:nth-of-type(2) {
             background-color: red !important;
         }
-
         &:nth-of-type(2):hover {
-
             background-color: red !important;
         }
     }
 }
 
 // ==== ==== ======
-
 // ==== ==== ======
-
 //  General Reset
 .swal-footer {
     button.swal-button--cancel {
@@ -314,19 +241,16 @@ $heightOFHeaderAndFooter:23vh;
             background-color: #efefef !important;
         }
     }
-
     button.swal-button--danger {
         &:focus {
             background-color: red !important;
         }
     }
-
     button.button.swal-button--confirm {
         &:focus {
             background-color: #7cd1f9 !important;
         }
     }
-
     .swal-button-container {
         button.swal-button--confirm {
             &:focus {
@@ -336,37 +260,29 @@ $heightOFHeaderAndFooter:23vh;
     }
 }
 
-
-
 // ==== General Progress Colors ====
 .CircularProgressbar.done {
-
     .CircularProgressbar-path {
         stroke: #9ACD32 !important;
     }
-
     .CircularProgressbar-text {
         fill: #9ACD32 !important;
     }
 }
 
 .CircularProgressbar.succ {
-
     .CircularProgressbar-path {
         stroke: #ffd31d !important;
     }
-
     .CircularProgressbar-text {
         fill: #ffd31d !important;
     }
 }
 
 .CircularProgressbar.warn {
-
     .CircularProgressbar-path {
         stroke: #ffc371 !important;
     }
-
     .CircularProgressbar-text {
         fill: #ffc371 !important;
     }
@@ -376,35 +292,25 @@ input {
     color: #ddd !important;
 }
 
-
-
 .CircularProgressbar.dang {
-
     .CircularProgressbar-path {
         stroke: #e64040 !important;
     }
-
     .CircularProgressbar-text {
         fill: #e64040 !important;
     }
 }
 
 .Error-ul {
-
-
     li {
         color: $primaryColor !important;
-
         a {
             color: $primaryColor !important;
         }
-
         &:hover {
             text-decoration: underline !important;
         }
-
     }
-
     p {
         font-family: 'Leckerli One', cursive !important;
         margin: 10px !important;
@@ -413,19 +319,13 @@ input {
 }
 
 .swal-modal {
-
     background-color: #0f0c29 !important;
-
-
-
     .swal-title,
     .swal-text {
         color: #ddd !important;
     }
-
     .swal-footer {
         color: #ddd !important;
-
         .swal-button--confirm {
             background-color: $primaryColor !important;
         }
@@ -436,7 +336,11 @@ input {
 // PreLoading Page in App.js
 .preloadingPage {
     background: #000000;
+    p {
+        color: white;
+    }
 }
+
 // Solve Success Icon background broblem
 .swal-icon--success:before,
 .swal-icon--success::after,
@@ -447,7 +351,6 @@ input {
 //  Profile Page
 .profileSection {
     color: white;
-
     article {
         i {
             background-color: $primaryColor;

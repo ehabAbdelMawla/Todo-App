@@ -9,11 +9,11 @@ class PreLoad extends Component {
         content: null
     }
 
-    componentWillReceiveProps = async (newProps) => {
+    componentWillReceiveProps = async(newProps) => {
         var content = await newProps.fakeRender()
         this.setState({ content: content, loaded: true, })
     }
-    componentDidMount = async () => {
+    componentDidMount = async() => {
         var content = await this.props.fakeRender()
         this.setState({ content: content, loaded: true, })
 
@@ -21,9 +21,8 @@ class PreLoad extends Component {
 
 
     render() {
-        console.log('preload Render', this.state)
-        return (
-            <div> {this.state.loaded && this.state.content ? this.state.content : <Circular />}</ div>
+        return ( <
+            div > { this.state.loaded && this.state.content ? this.state.content : < Circular / > } < / div>
         )
     }
 }

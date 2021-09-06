@@ -4,13 +4,8 @@
     box-sizing: border-box;
 }
 
-
 // ==== Body Design =====
 $primaryColor: #4e54c8;
-
-
-
-
 body {
     position: relative;
     min-height: 100vh;
@@ -26,7 +21,6 @@ body {
 // ==== ==== ====  =====
 // ==== Header & Footer Design =====
 $heightOFHeaderAndFooter: 23vh;
-
 header {
     min-width: 100vw;
     overflow: hidden;
@@ -34,13 +28,11 @@ header {
     min-height: 200px;
     transition: all 0.5s ease-in-out;
     position: relative;
-
     img {
         min-width: 100vw;
         margin: 0;
         padding: 0;
     }
-
     i {
         transition: all ease-in-out 0.5s;
         position: absolute;
@@ -50,7 +42,6 @@ header {
         cursor: pointer;
         top: 20px;
     }
-
     .userInfo {
         user-select: none;
         position: absolute;
@@ -58,35 +49,11 @@ header {
         right: 20px;
         display: flex;
         overflow: hidden;
-
         .image-container {
-            overflow: hidden;
-            position: relative;
-            text-align: center;
-            display: inline-flex;
-            justify-content: center;
-            width: 100px;
-            height: 100px;
-
             img {
-                min-width: 100%;
-                width: 100%;
                 border-radius: 50%;
-                height: 100%;
             }
         }
-
-        .image-container-overlay {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
         a {
             cursor: pointer;
             user-select: none;
@@ -99,50 +66,42 @@ header {
     }
 }
 
-
 // ==== ==== ====  =====
 // ==== Login & SignUp Design ====
 .Login,
 .signup {
     overflow: hidden;
-
     h1 {
         color: $primaryColor;
         font-size: 60px;
         margin-top: 0;
         font-family: fantasy;
     }
-
     form {
         width: 45%;
         min-width: 350px;
         max-width: 650px;
         margin: 25px auto;
-
         .form-group {
             margin: 25px auto;
             text-align: left;
             border-bottom: 2px solid #ddd !important;
             position: relative;
-
             input {
                 width: 90%;
                 margin: 0;
                 border-bottom: none !important;
                 outline: none !important;
-
                 &:focus {
                     border-bottom: none !important;
                     box-shadow: none !important;
                 }
             }
-
             i {
                 margin: 0;
                 font-size: 20px;
                 color: gray;
                 padding: 5px;
-
                 // width: 5%;
                 &.eyeIcon {
                     position: absolute;
@@ -151,10 +110,8 @@ header {
                 }
             }
         }
-
         .buttonContainer {
             text-align: right;
-
             button {
                 text-align: center;
                 background-color: $primaryColor !important;
@@ -165,18 +122,14 @@ header {
             }
         }
     }
-
     ul {
         margin: 60px;
-
         li {
             font-size: 20px;
             font-weight: bold;
-
             a {
                 color: $primaryColor !important;
             }
-
             &:hover {
                 text-decoration: underline;
             }
@@ -201,11 +154,9 @@ header {
         bottom: 0;
         text-align: right;
         margin: 30px 20px;
-
         span {
             text-align: center;
-            transition: background-color 0.5s ease-in-out,
-                color 0.5s ease-in-out;
+            transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
             cursor: pointer;
             display: flex;
             justify-content: center;
@@ -216,18 +167,15 @@ header {
             width: 50px;
             height: 50px;
             border-radius: 50%;
-
             &:hover {
                 background-color: white;
                 color: $primaryColor;
             }
         }
-
         &.second {
             bottom: 60px;
         }
     }
-
     form {
         //  background-color: red;
         width: 65%;
@@ -235,7 +183,6 @@ header {
         margin: 3vw auto;
         text-align: center;
         overflow: hidden;
-
         input {
             padding: 5px;
             width: 50% !important;
@@ -243,27 +190,23 @@ header {
             border-bottom: none !important;
             outline: none !important;
             border-bottom: 2px solid #ddd !important;
-
             &:focus {
                 border-bottom: none !important;
                 box-shadow: none !important;
                 border-bottom: 2px solid #ddd !important;
             }
         }
-
         button {
             color: $primaryColor;
             background-color: white;
             border: none !important;
             box-shadow: none !important;
-
             &:hover {
                 color: $primaryColor;
                 background-color: white;
             }
         }
     }
-
     .tit {
         margin-top: 75px;
         margin-bottom: 2vw;
@@ -273,14 +216,12 @@ header {
         font-style: italic;
         font-family: "Leckerli One", cursive;
     }
-
     .branchParent {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         padding: 25px;
-
         .branchCard {
             user-select: none;
             overflow: hidden;
@@ -294,13 +235,12 @@ header {
             .head {
                 display: inline;
                 position: absolute;
-                top:0;
-                left:0px;
-                right:0px;
+                top: 0;
+                left: 0px;
+                right: 0px;
                 padding: 5px;
                 text-align: right;
                 background: linear-gradient(270deg, #000000, #434343);
-             
                 button {
                     margin: 5px;
                     width: 30px;
@@ -309,37 +249,32 @@ header {
                     border: none;
                     border-radius: 50%;
                     cursor: pointer;
-
                     &:first-of-type {
                         //  background-color: #f0e507;
                         background: linear-gradient(90deg, #f7971e, #ffd200);
                     }
-
                     &:nth-of-type(2) {
                         background: #ff6347;
                     }
                 }
             }
-
             .contextBody {
                 border-bottom: 1px solid #121212;
                 border-left: 1px solid #121212;
                 border-right: 1px solid #121212;
                 padding-top: 60px;
                 height: 100%;
-                  border-radius: 5px;
+                border-radius: 5px;
                 display: flex;
                 flex-direction: column;
                 flex-wrap: nowrap;
                 justify-content: center;
                 cursor: pointer;
-
                 .CircularProgressbar {
                     display: block;
                     max-width: 75%;
                     margin: 5px auto;
                 }
-
                 p {
                     padding: 10px;
                     font-size: 30px;
@@ -348,7 +283,6 @@ header {
                     word-wrap: break-word;
                 }
             }
-
             &:hover {
                 box-shadow: 6px 6px 0px 1px rgba(0, 0, 0, 0.19);
             }
@@ -359,7 +293,6 @@ header {
 // ==== ==== ====  =====
 //  ==== TODO  Design ====
 .addFormContainer {
-
     //  background: red;
     form {
         //  background: green;
@@ -367,21 +300,18 @@ header {
         min-width: 350px;
         margin: 3vw auto;
         text-align: center;
-
         input {
             width: 50% !important;
             min-width: 300px;
             border-bottom: none !important;
             outline: none !important;
             border-bottom: 2px solid #ddd !important;
-
             &:focus {
                 border-bottom: none !important;
                 box-shadow: none !important;
                 border-bottom: 2px solid #ddd !important;
             }
         }
-
         select {
             width: 50%;
             margin: 5px auto;
@@ -389,19 +319,16 @@ header {
             font-size: 18px;
             max-width: 200px;
         }
-
         button {
             background: $primaryColor;
             margin: 10px;
             min-width: 150px;
-
             &:hover,
             &:focus {
                 background: $primaryColor;
             }
         }
     }
-
     .filters {
         width: 100%;
         margin: 0 auto;
@@ -410,7 +337,6 @@ header {
         flex-wrap: nowrap;
         justify-content: center;
         max-width: 1000px;
-
         button {
             background: gray;
             width: calc(100% / 3);
@@ -421,28 +347,22 @@ header {
             text-transform: none;
             box-shadow: none;
             transition: all 0.3s ease-in-out;
-
             &:hover {
                 opacity: 0.9;
                 background: gray;
                 box-shadow: none;
             }
-
             &.Active {
                 background: $primaryColor;
             }
-
-
             &:first-of-type {
                 border-radius: 10px 0 0px 10px;
             }
-
             &:last-of-type {
                 border-radius: 0 10px 10px 0px;
             }
         }
     }
-
     .tasksContainer {
         min-width: 320px;
         width: 80%;
@@ -451,12 +371,11 @@ header {
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
-        
-        .filters,p {
+        .filters,
+        p {
             flex-basis: 100vw;
             margin-bottom: 20px;
         }
-        
         .todoItem {
             flex-basis: 40%;
             flex-grow: 1;
@@ -466,19 +385,16 @@ header {
             text-align: left;
             position: relative;
             overflow: hidden;
-            padding:  30px;
+            padding: 30px;
             padding-right: 10px;
-            box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
-            margin: 15px ;
-            transition: transform 0.5s ease-in-out,
-                        box-shadow 0.5s ease-in-out;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+            transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
             visibility: hidden;
-            
             &:hover {
-                box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
+                box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
                 transform: scale(1.01);
             }
-
             &:after {
                 content: "";
                 position: absolute;
@@ -489,19 +405,15 @@ header {
                 height: 15px;
                 border-radius: 50%;
             }
-
             &.Low:after {
                 background: #9acd32;
             }
-
             &.Medium:after {
                 background: #ffc371;
             }
-
             &.High:after {
                 background: #c93636;
             }
-
             span {
                 font-size: 16px;
                 cursor: pointer;
@@ -512,13 +424,11 @@ header {
                 &:hover {
                     text-decoration: line-through;
                 }
-
                 &.Done {
                     text-decoration: line-through;
                     color: lightgray;
                 }
             }
-
             .btns {
                 margin-left: auto;
                 button {
@@ -528,11 +438,9 @@ header {
                     height: 30px;
                     border-radius: 50%;
                     cursor: pointer;
-
                     &:first-of-type {
                         background: linear-gradient(90deg, #f7971e, #ffd200);
                     }
-
                     &:nth-of-type(2) {
                         background: #ff6347;
                     }
@@ -546,18 +454,15 @@ header {
 //  TO DO Upper Part
 .cardsContainer {
     user-select: none;
-
     h1 {
         font-family: "Leckerli One", cursive;
         margin-top: 0;
         font-size: 50px;
         text-align: center;
     }
-
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
     div.card {
         transition: all 0.35s ease-in-out;
         text-align: center;
@@ -569,58 +474,47 @@ header {
         min-width: 100px;
         font-size: 20px;
         color: white;
-
         i {
             margin: 10px;
             color: #ffc371;
             display: block;
             font-size: 20px;
         }
-
         &:nth-of-type(2) {
             font-family: "Leckerli One", cursive;
             background-color: #9acd32;
-
             //  max-width: 175px;
             i {
                 color: white;
             }
         }
-
         &:nth-of-type(2):hover {
             background-color: white;
             color: #9acd32;
-
             i {
                 color: #9acd32;
             }
         }
-
         &:nth-of-type(3) {
             font-family: "Leckerli One", cursive;
             background-color: #ffc371;
-
             //  max-width: 175px;
             i {
                 color: white;
             }
         }
-
         &:nth-of-type(3):hover {
             background-color: white;
             color: #ffc371;
-
             i {
                 color: #ffc371;
             }
         }
-
         &:nth-of-type(1) {
             background: transparent;
             flex-basis: 100%;
             border: none;
             box-shadow: none;
-
             .CircularProgressbar {
                 max-width: 15vw;
                 min-width: 200px;
@@ -636,13 +530,11 @@ header {
     margin: 0;
     overflow: hidden;
     padding: 10px;
-
     input,
     select {
         margin-bottom: 25px !important;
         text-align-last: center;
     }
-
     button {
         margin: 15px 5px !important;
         color: white;
@@ -651,11 +543,9 @@ header {
         border-radius: 5px;
         background-color: $primaryColor;
         border: none;
-
         &:nth-of-type(2) {
             background-color: #c7c7c7;
         }
-
         &:nth-of-type(2):hover {
             background-color: #c7c7c7;
         }
@@ -670,19 +560,16 @@ header {
             background-color: #efefef;
         }
     }
-
     button.swal-button--danger {
         &:focus {
             background-color: red;
         }
     }
-
     button.button.swal-button--confirm {
         &:focus {
             background-color: #7cd1f9 !important;
         }
     }
-
     .swal-button-container {
         button.swal-button--confirm {
             &:focus {
@@ -697,7 +584,6 @@ header {
     .CircularProgressbar-path {
         stroke: #9acd32;
     }
-
     .CircularProgressbar-text {
         fill: #9acd32;
     }
@@ -707,7 +593,6 @@ header {
     .CircularProgressbar-path {
         stroke: #ffd31d;
     }
-
     .CircularProgressbar-text {
         fill: #ffd31d;
     }
@@ -717,7 +602,6 @@ header {
     .CircularProgressbar-path {
         stroke: #ffc371;
     }
-
     .CircularProgressbar-text {
         fill: #ffc371;
     }
@@ -727,7 +611,6 @@ header {
     .CircularProgressbar-path {
         stroke: #e64040;
     }
-
     .CircularProgressbar-text {
         fill: #e64040;
     }
@@ -739,20 +622,16 @@ header {
     font-size: 25px;
     text-align: center;
     height: 80vh;
-
     li {
         color: $primaryColor !important;
         font-weight: bold;
-
         a {
             color: $primaryColor !important;
         }
-
         &:hover {
             text-decoration: underline;
         }
     }
-
     p {
         font-family: "Leckerli One", cursive;
         margin: 10px;
@@ -772,13 +651,11 @@ header {
     justify-content: center;
     text-align: center;
     top: 0;
-
     img {
         max-width: 20%;
         min-width: 150px;
         margin: 1px auto;
     }
-
     p {
         color: black;
         font-family: "Leckerli One", cursive;
@@ -787,8 +664,6 @@ header {
         font-size: 40px;
     }
 }
-
-
 
 //  Profile Page
 .profileSection {
@@ -799,7 +674,6 @@ header {
     position: relative;
     align-items: center;
     padding-bottom: 35px;
-
     //  background: yellow;
     input {
         &:focus {
@@ -808,10 +682,8 @@ header {
             border-bottom: 2px solid #ddd !important;
         }
     }
-
     article {
         position: relative;
-
         //  background: red;
         //  overflow: hidden;
         .image-container {
@@ -828,13 +700,11 @@ header {
             min-height: 200px;
             border-radius: 50%;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-
             img {
                 width: 100%;
                 height: 100%;
             }
         }
-
         .image-container-overlay {
             width: 100%;
             height: 100%;
@@ -847,7 +717,6 @@ header {
             justify-content: center;
             //  background-color: green !important;
         }
-
         i {
             display: inline-flex;
             flex-direction: column;
@@ -868,36 +737,30 @@ header {
             cursor: pointer;
         }
     }
-
     div {
         margin-top: 20px;
         transition: all 0.5s ease-in-out;
         //  background: green;
         width: 40vw;
         min-width: 300px;
-
         p {
             user-select: none;
             cursor: pointer;
             text-align: center;
             margin-top: 25px;
         }
-
         input {
             font-size: 20px;
         }
-
         div.form-group {
             position: relative;
             text-align: center;
-
             i {
                 position: absolute;
                 right: 0;
                 font-size: 20px;
                 top: 10px;
             }
-
             button {
                 margin-top: 10px;
                 background: $primaryColor;
@@ -906,25 +769,20 @@ header {
     }
 }
 
-
-
 //  Graph Section in daily branch
 .Statistics {
     flex-basis: 100%;
     text-align: center;
     padding: 25px 5px;
     display: flex;
-
     section {
         flex-grow: 1;
     }
-
     article {
         width: 150px;
         display: inline-block;
         margin: 10px 15px;
         padding: 20px 5px;
-
         select {
             font-size: 18px;
             text-align-last: center;
@@ -933,18 +791,14 @@ header {
     }
 }
 
-
-
 // WOW 
-
-.fadeInUpImp{
+.fadeInUpImp {
     animation-name: fadeInUp;
     animation-duration: 1.5s;
     animation-fill-mode: forwards;
 }
 
-
-.fadeOutDownImp{
+.fadeOutDownImp {
     animation-name: fadeOutDown;
     animation-duration: .45s;
     animation-fill-mode: forwards;
@@ -952,43 +806,44 @@ header {
 
 // Text Animation
 .text-focus-in {
-	-webkit-animation: text-focus-in 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-	        animation: text-focus-in 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    -webkit-animation: text-focus-in 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+    animation: text-focus-in 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
 @-webkit-keyframes text-focus-in {
-  0% {
-    -webkit-filter: blur(12px);
-            filter: blur(12px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
-    opacity: 1;
-  }
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
 }
+
 @keyframes text-focus-in {
-  0% {
-    -webkit-filter: blur(12px);
-            filter: blur(12px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-filter: blur(0px);
-            filter: blur(0px);
-    opacity: 1;
-  }
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        opacity: 1;
+    }
 }
 
 
 /* Media Queries*/
+
 @media (max-width: 1400px) {
     header {
         .userInfo {
             top: 8px;
             right: 10px;
-
             .image-container {
                 overflow: hidden;
                 position: relative;
@@ -1003,7 +858,6 @@ header {
                     height: 100%;
                 }
             }
-
             a {
                 cursor: pointer;
                 font-size: 18px;
@@ -1025,9 +879,10 @@ header {
     }
     header {
         .userInfo {
-             top: 20px;
+            top: 20px;
             right: 10px;
-        }}
+        }
+    }
 }
 
 @media (max-width: 700px) {
@@ -1041,15 +896,13 @@ header {
         .userInfo {
             top: 5px;
             right: 10px;
-
             .image-container {
                 margin-top: 10px;
                 width: 50px;
                 height: 50px;
             }
+        }
     }
-}
-
     footer {
         overflow: hidden;
         width: 100vw;
@@ -1057,7 +910,6 @@ header {
         position: absolute;
         bottom: 0;
         display: flex;
-
         img {
             margin-top: auto;
             width: 100%;

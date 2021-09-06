@@ -3,7 +3,8 @@ import waveImage from '../images/upperWave.svg'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import placeholderImage from '../images/icons8-user-90.png'
-import ImageLoader from './imageLoader'
+import ImageLoader from 'img-loading'
+import Circular from './circular'
 class Header extends Component {
 
 
@@ -13,7 +14,7 @@ class Header extends Component {
                 <div id="extend"></div>
                 {!this.props.backArrowVisibilty && this.props.user ? <div className="userInfo">
                     <Link to={`/profile/${this.props.user.uid}`} className="link">{this.props.user.email.substring(0, this.props.user.email.indexOf('@'))}</Link>
-                    <ImageLoader errorImageSrc={placeholderImage} imageSrc={this.props.user.imageUrl} key={Math.random() * 1000} />
+                    <ImageLoader loader={ Circular} errorImageSrc={placeholderImage} imageSrc={this.props.user.imageUrl} key={Math.random() * 1000} />
                 </div> : ''}
 
                 {this.props.backArrowVisibilty ?
