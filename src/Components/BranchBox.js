@@ -77,38 +77,30 @@ export default function BranchBox({ id, complementRate, branchName, history }) {
             })
     }
 
-    return ( <
-        div className = { `branchCard wow  ${animateClass}` }
+    return ( <div className = { `branchCard wow  ${animateClass}` }
         ref = { referance }
         onAnimationEnd = {
             ({ animationName }) => {
                 if (animationName === "fadeOutDown") { dispatch({ type: "REMOVE_BRANCH", id }) }
             }
         } >
-        <
-        div className = "head" >
-        <
-        button type = "button"
-        onClick = { updateBranch } >
-        <
-        i className = "fa fa-edit" > < /i></button >
-        <
-        button type = "button"
+        <div className = "head">
+        <button type = "button"
+        onClick = { updateBranch }>
+        <i className = "fa fa-edit"> </i></button >
+        <button type = "button"
         onClick = { deleteBranch } >
-        <
-        i className = "fa fa-trash" > < /i> < /
-        button > <
-        /div> <
-        div className = "contextBody"
-        onClick = { openToDoOfbranch } >
-        <
-        CircularProgressbar value = { complementRate ? complementRate : 0 }
+        <i className = "fa fa-trash" > </i> </button> 
+        </div>
+        <div className = "contextBody"
+        onClick = { openToDoOfbranch }>
+        <CircularProgressbar value = { complementRate ? complementRate : 0 }
         maxValue = { 100 }
         text = { `${complementRate ? complementRate.toPrecision(3) : 0}%` }
         className = { complementRate >= 25 ? complementRate >= 50 ? complementRate >= 75 ? "done" : "succ" : "warn" : "dang" }
-        /> <
-        p className = "wow text-focus-in" > { branchName } < /p> < /
-        div > <
-        /div>
+        /> 
+        <p className = "wow text-focus-in" > { branchName } </p> 
+        </div> 
+        </div>
     )
 }

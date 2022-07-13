@@ -420,7 +420,7 @@ header {
                 transition: all 3s ease;
                 user-select: none;
                 word-wrap: break-word;
-                max-width: 80%;
+                max-width: 75%;
                 &:hover {
                     text-decoration: line-through;
                 }
@@ -431,6 +431,7 @@ header {
             }
             .btns {
                 margin-left: auto;
+                display: flex;
                 button {
                     border: none;
                     margin: 0 5px;
