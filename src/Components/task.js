@@ -3,6 +3,7 @@ import Firebase from 'firebase';
 import EditPopUp from './editItem'
 import swal from 'sweetalert'
 import { connect } from 'react-redux'
+import audio3 from "../Audios/audio3.mp3"
 import Modal from 'react-awesome-modal';
 
 class Task extends Component {
@@ -16,6 +17,10 @@ class Task extends Component {
     finishToDoItem = () => {
         const { id, status, branchid, filter, toggleStatus } = this.props
         var newStatus = status === "Done" ? "needed" : "Done"
+        if(newStatus=="Done"){
+            var audio = new Audio(audio3);
+                audio.play();
+        }
         Firebase.database().ref().child(`users/${this.props.user.uid}/branches/${this.props.branchid}/todoList/${id}`)
             .update({ status: newStatus }).then(() => {
                 if (filter && filter === "All") {
