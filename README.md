@@ -111,8 +111,10 @@
  <kbd> <img src="https://user-images.githubusercontent.com/51888513/188965149-99a105e6-e79c-4c00-b92d-973f2b7701c4.png" width="18" style="border-radius:5px; margin:5px" /></kbd>  <a href="https://raw.githubusercontent.com/ehabAbdelMawla/Todo-App/main/app.apk
 ">Android App</a>
  <br/>
- <kbd> <img src="https://user-images.githubusercontent.com/51888513/188971072-7a0cb030-948d-48cd-9b78-5cc32dd32aba.png" width="18" style="border-radius:5px; margin:5px"/></kbd>  <a href="https://todolist-76565.web.app/"> Web App </a>
+ <kbd> <img src="https://user-images.githubusercontent.com/51888513/188971072-7a0cb030-948d-48cd-9b78-5cc32dd32aba.png" width="18" style="border-radius:5px; margin:5px"/></kbd>  <a href="https://todolist-76565.web.app/"> Web App </a><br/>
+  <kbd> <img src="https://user-images.githubusercontent.com/51888513/202889903-bc7132a5-dc73-4376-9701-54a18661fc2a.png" width="18" style="border-radius:5px; margin:5px"/></kbd>   Desktop App 
  
+
  <!-- CONTACT -->
 ## Contact
 <p align="center">
